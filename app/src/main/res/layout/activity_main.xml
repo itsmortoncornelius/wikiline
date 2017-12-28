@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context="de.handler.mobile.wikiline.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/activity_main_recycler_view"
+    <de.handler.mobile.wikiline.WikiSlider
+        android:id="@+id/activity_main_slider"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>

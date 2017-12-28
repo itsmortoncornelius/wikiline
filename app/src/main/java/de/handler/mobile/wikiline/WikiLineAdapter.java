@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ class WikiLineAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new WikiLineViewHolder(inflater.inflate(R.layout.item_wikiline, parent));
+        return new WikiLineViewHolder(inflater.inflate(R.layout.item_wikiline, parent, false));
     }
 
     @Override
@@ -44,12 +45,19 @@ class WikiLineAdapter extends RecyclerView.Adapter {
      * Defines the list element and how it looks.
      */
     private static class WikiLineViewHolder extends RecyclerView.ViewHolder {
+        private final TextView titleTextView;
+        private final TextView urlTextView;
+
         WikiLineViewHolder(View itemView) {
             super(itemView);
+
+            titleTextView = itemView.findViewById(R.id.item_wikiline_title_text_view);
+            urlTextView = itemView.findViewById(R.id.item_wikiline_url_text_view);
         }
 
         void bind(WikiLineItem wikiLineItem) {
-            // TODO bind views
+            titleTextView.setText(wikiLineItem.title);
+            urlTextView.setText(wikiLineItem.url);
         }
     }
 }

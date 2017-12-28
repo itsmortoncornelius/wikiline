@@ -1,21 +1,24 @@
 package de.handler.mobile.wikiline;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatActivity;
+
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
+    private WikiSlider wikiSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.activity_main_recycler_view);
-        recyclerView.setAdapter(new WikiLineAdapter());
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+        wikiSlider = findViewById(R.id.activity_main_slider);
+        wikiSlider.updateDataSet(getWikiLineItems());
+    }
+
+    private List<WikiLineItem> getWikiLineItems() {
+        return Collections.emptyList();
     }
 }
