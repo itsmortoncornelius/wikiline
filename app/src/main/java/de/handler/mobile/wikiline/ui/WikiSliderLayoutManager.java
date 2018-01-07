@@ -1,4 +1,4 @@
-package de.handler.mobile.wikiline;
+package de.handler.mobile.wikiline.ui;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

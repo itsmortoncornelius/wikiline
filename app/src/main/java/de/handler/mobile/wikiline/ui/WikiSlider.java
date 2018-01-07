@@ -1,4 +1,4 @@
-package de.handler.mobile.wikiline;
+package de.handler.mobile.wikiline.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import java.util.List;
+
+import de.handler.mobile.wikiline.R;
 
 public class WikiSlider extends FrameLayout {
     private RecyclerView recyclerView;

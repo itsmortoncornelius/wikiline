@@ -1,4 +1,4 @@
-package de.handler.mobile.wikiline;
+package de.handler.mobile.wikiline.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.handler.mobile.wikiline.R;
 
 class WikiLineAdapter extends RecyclerView.Adapter {
     private final List<WikiLineItem> wikiLineItems = new ArrayList<>();
@@ -46,18 +48,18 @@ class WikiLineAdapter extends RecyclerView.Adapter {
      */
     private static class WikiLineViewHolder extends RecyclerView.ViewHolder {
         private final TextView titleTextView;
-        private final TextView urlTextView;
+        private final TextView contentTextView;
 
         WikiLineViewHolder(View itemView) {
             super(itemView);
 
             titleTextView = itemView.findViewById(R.id.item_wikiline_title_text_view);
-            urlTextView = itemView.findViewById(R.id.item_wikiline_url_text_view);
+            contentTextView = itemView.findViewById(R.id.item_wikiline_content_text_view);
         }
 
         void bind(WikiLineItem wikiLineItem) {
             titleTextView.setText(wikiLineItem.title);
-            urlTextView.setText(wikiLineItem.url);
+            contentTextView.setText(wikiLineItem.content);
         }
     }
 }
